@@ -8,12 +8,20 @@
 import Foundation
 
 struct LocalizedAlertError: LocalizedError {
+    
     let underlyingError: LocalizedError
+    
     var errorDescription: String? {
         underlyingError.errorDescription
     }
+    var failureReason: String? {
+        underlyingError.failureReason
+    }
     var recoverySuggestion: String? {
         underlyingError.recoverySuggestion
+    }
+    var helpAnchor: String? {
+        underlyingError.helpAnchor
     }
 
     init?(error: Error?) {
